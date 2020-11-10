@@ -1,3 +1,6 @@
 # testClient
-HTTP-client, that sends main API3 requests and parses response
-Frameworks used: Axios, Jest
+***
+###HTTP-client designed to send main API3 requests and parse responses
+###Frameworks used: 
+1. Axios 
+2. Jest
