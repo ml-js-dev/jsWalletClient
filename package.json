@@ -1,0 +1,28 @@
+{
+  "name": "testClient",
+  "version": "1.0.0",
+  "description": "HTTP-client, that sends main API3 requests and parses response",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxxie-whatsoever/testClient.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxxie-whatsoever/testClient/issues"
+  },
+  "homepage": "https://github.com/maxxie-whatsoever/testClient#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
