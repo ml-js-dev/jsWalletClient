@@ -1,35 +1,38 @@
+'use strict';
 //Pre-request Scripts
-pm.variables.set("playerId", pm.variables.get("licenseePlayerId"));
-
-function setEnvironmentVariable() {
+export function setEnvironmentVariable() {
     var getRandomId = (idLength) => {
         let id = "inttest";
         let idPrefixLength = id.length;
         let charset = "abcdefghijklmnopqrstuvwxyz0123456789";
-        for (let i = 0; i < idLength - idPrefixLength; i++)
+        for (let i = 0; i < idLength - idPrefixLength; i++) {
             id += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
         return id;
-    }
+    };
     var getRandomNumericId = (idLength) => {
         let id = "707";
         let idPrefixLength = id.length;
         let charset = "123456789";
-        for (let i = 0; i < idLength - idPrefixLength; i++)
+        for (let i = 0; i < idLength - idPrefixLength; i++) {
             id += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
         return id;
-    }
+    };
     return {
         idGeneration: {
             getRandomId,
             getRandomNumericId
         }
-    }
-};
+    };
+}
 
 //Global Variables
 export let globalVariables = {
+    //hardcoded block
     casinoId: '0rnu7w1c8xhbuhtn',
     licenseePlayerId: 'abcdef',
+    playerId: 'insertPlayerId',
     gameType: 'csp',
     tableId: 'CSPTable00000001',
     virtualTableId: null,
@@ -45,8 +48,9 @@ export let globalVariables = {
     clientIpAddress: '127.0.0.1',
     currency: 'EUR',
     channelType: 'Phone',
-    channelOs = 'Other',
+    channelOs: 'Other',
+    //variables that use pre-scripter value generator
     correlationId: setEnvironmentVariable().idGeneration.getRandomId(32),
     sessionId: setEnvironmentVariable().idGeneration.getRandomId(32),
     licenseeSessionId: setEnvironmentVariable().idGeneration.getRandomId(32)
-}
+};
