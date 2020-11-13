@@ -17,3 +17,8 @@ test('User fetched name should be Leanne Graham', async () => {
     const data = await functions.fetchUser();
     expect(data.name).toEqual('Leanne Graham');
 });
+
+test('Session Initialization', async () => {
+    expect.objectContaining(JSON);
+
+});
