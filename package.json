@@ -1,8 +1,9 @@
 {
-  "name": "testClient",
+  "name": "package.json",
   "version": "1.0.0",
-  "description": "HTTP-client, that sends main API3 requests and parses response Frameworks used: Axios, Jest, Mocha, Chai",
+  "description": "HTTP-client, that sends main API3 requests and parses response Frameworks used: Axios, Jest",
   "main": "variables.js",
+  "type": "module",
   "directories": {
     "test": "test"
   },
@@ -14,7 +15,7 @@
     "url": "git+https://github.com/maxxie-whatsoever/testClient.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Maxim Lee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maxxie-whatsoever/testClient/issues"

@@ -1,4 +1,3 @@
-'use strict';
 //Pre-request Scripts
 export function setEnvironmentVariable() {
     var getRandomId = (idLength) => {
@@ -53,6 +52,7 @@ export let globals = {
     betCode1: 'CSPBet0000000001',
     betCode2: 'CSPBet0000000002',
     betCode3: 'CSPBet0000000003',
+    placeTime: Date().toJSON(),
     //variables that use pre-scripter value generator
     correlationId: setEnvironmentVariable().idGeneration.getRandomId(32),
     sessionId: setEnvironmentVariable().idGeneration.getRandomId(32),
@@ -65,7 +65,7 @@ export let globals = {
     gameId: setEnvironmentVariable().idGeneration.getRandomId(24)
 };
 
-let placeTime = Date().toJSON();
+
 
 //body of the requests
 export const sessionInitBody = {
