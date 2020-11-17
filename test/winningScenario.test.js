@@ -1,11 +1,17 @@
 import {functions} from './winningScenario.js';
-import pkg from '@jest/globals';
-const {describe, test, expect} = pkg;
-describe("wwww", ()=>{
+import * as variables from '../variables.js';
+
+describe("wwww", () => {
     test('Session Initialization', async () => {
         expect.objectContaining(JSON);
-        const data = await functions.sessionInit();
-        expect(data.status).toEqual(200);
-        // expect(data.JSON)
+
+        const response = await functions.sessionInit(variables.sessionInitBody);
+        const { status, data, config } = response;
+        
+        console.log("Request data", config.data);
+        
+        expect(status).toEqual(200);
+        
+        console.log("Response data", data)
     });
 })
