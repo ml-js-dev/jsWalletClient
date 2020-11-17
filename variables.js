@@ -29,7 +29,7 @@ export function setEnvironmentVariable() {
 //Global Variables
 export let globals = {
     //hardcoded block
-    casinoId: '0rnu7w1c8xhbuhtn',
+    casinoId: 'ladbrokes0000001',
     licenseePlayerId: 'abcdef',
     playerId: 'insertPlayerId',
     gameType: 'csp',
@@ -66,6 +66,9 @@ export let globals = {
 };
 
 export let placeTime = new Date().toJSON();
+
+//header
+export const header = {'Content-Type': 'application/json'};
 
 //body of the requests
 export const sessionInitBody = {
