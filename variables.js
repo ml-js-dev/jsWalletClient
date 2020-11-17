@@ -1,56 +1,30 @@
 //Pre-request Scripts
-// export function setEnvironmentVariable() {
-//     var getRandomId = (idLength) => {
-//         let id = "inttest";
-//         let idPrefixLength = id.length;
-//         let charset = "abcdefghijklmnopqrstuvwxyz0123456789";
-//         for (let i = 0; i < idLength - idPrefixLength; i++) {
-//             id += charset.charAt(Math.floor(Math.random() * charset.length));
-//         }
-//         return id;
-//     };
-//     var getRandomNumericId = (idLength) => {
-//         let id = "707";
-//         let idPrefixLength = id.length;
-//         let charset = "123456789";
-//         for (let i = 0; i < idLength - idPrefixLength; i++) {
-//             id += charset.charAt(Math.floor(Math.random() * charset.length));
-//         }
-//         return id;
-//     };
-//     return {
-//         idGeneration: {
-//             getRandomId,
-//             getRandomNumericId
-//         }
-//     };
-// };
-
-export const setEnvironmentVariable = {
-    getRandomId: function (idLength) {
-      let id = 'inttest';
-      let idPrefixLength = id.length;
-      let charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
-      for (let i = 0; i < idLength - idPrefixLength; i++)
-        id += charset.charAt(Math.floor(Math.random() * charset.length));
-      return id;
-    },
-    getRandomNumericId: function (idLength) {
-      let id = '707';
-      let idPrefixLength = id.length;
-      let charset = '123456789';
-      for (let i = 0; i < idLength - idPrefixLength; i++)
-        id += charset.charAt(Math.floor(Math.random() * charset.length));
-      return id;
-    },
-    generateRandomIdAndNumericId: function (idLength) {
-      let idGeneration = {
-        randomId: this.getRandomId(idLength),
-        randomNumericId: this.getRandomNumericId(idLength)
-      };
-      return idGeneration;
-    }
-  };
+export function setEnvironmentVariable() {
+    var getRandomId = (idLength) => {
+        let id = "inttest";
+        let idPrefixLength = id.length;
+        let charset = "abcdefghijklmnopqrstuvwxyz0123456789";
+        for (let i = 0; i < idLength - idPrefixLength; i++) {
+            id += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        return id;
+    };
+    var getRandomNumericId = (idLength) => {
+        let id = "707";
+        let idPrefixLength = id.length;
+        let charset = "123456789";
+        for (let i = 0; i < idLength - idPrefixLength; i++) {
+            id += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        return id;
+    };
+    return {
+        idGeneration: {
+            getRandomId,
+            getRandomNumericId
+        }
+    };
+};
 
 //Global Variables
 export let globals = {
@@ -80,26 +54,15 @@ export let globals = {
         betCode3: 'CSPBet0000000003',
 
     //variables that use pre-scripter value generator
-    // correlationId: setEnvironmentVariable().idGeneration.getRandomId(32),
-    // sessionId: setEnvironmentVariable().idGeneration.getRandomId(32),
-    // licenseeSessionId: setEnvironmentVariable().idGeneration.getRandomId(32),
-    // betId: setEnvironmentVariable().idGeneration.getRandomId(32),
-    // betId2: setEnvironmentVariable().idGeneration.getRandomId(32),
-    // betId3: setEnvironmentVariable().idGeneration.getRandomId(32),
-    // txId1: setEnvironmentVariable().idGeneration.getRandomNumericId(18),
-    // txId2: setEnvironmentVariable().idGeneration.getRandomNumericId(18),
-    // gameId: setEnvironmentVariable().idGeneration.getRandomId(24)
-
-correlationId: setEnvironmentVariable.getRandomId(32),
-sessionId: setEnvironmentVariable.getRandomId(32),
-licenseeSessionId: setEnvironmentVariable.getRandomId(32),
-gameId: setEnvironmentVariable.getRandomId(24),
-gameId1: setEnvironmentVariable.getRandomId(24),
-txId1: setEnvironmentVariable.getRandomNumericId(18),
-txId2: setEnvironmentVariable.getRandomNumericId(18),
-betId1: setEnvironmentVariable.getRandomId(32),
-betId2: setEnvironmentVariable.getRandomId(32),
-betId3: setEnvironmentVariable.getRandomId(32)
+    correlationId: setEnvironmentVariable().idGeneration.getRandomId(32),
+    sessionId: setEnvironmentVariable().idGeneration.getRandomId(32),
+    licenseeSessionId: setEnvironmentVariable().idGeneration.getRandomId(32),
+    betId: setEnvironmentVariable().idGeneration.getRandomId(32),
+    betId2: setEnvironmentVariable().idGeneration.getRandomId(32),
+    betId3: setEnvironmentVariable().idGeneration.getRandomId(32),
+    txId1: setEnvironmentVariable().idGeneration.getRandomNumericId(18),
+    txId2: setEnvironmentVariable().idGeneration.getRandomNumericId(18),
+    gameId: setEnvironmentVariable().idGeneration.getRandomId(24)
 };
 
 export let placeTime = new Date().toJSON();
