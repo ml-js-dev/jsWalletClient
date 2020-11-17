@@ -22,18 +22,13 @@ describe("Winning Scenario", () => {
         console.log(`Status: ${response.status} ${response.statusText}`);
     });
 
-    // test('Get Balance', async () => {
-    //     // let response;
-    //     // try {
-    //     //     response = await functions.getBalance(variables.balanceBody, variables.header);
-    //     // } catch(e) {
-    //     //     // Err
-    //     // }
-        
-    //     const {status, data, config} = response;
-    //     console.log('Request Data', config.data);
-    //     console.log('Response Data', data);
-    //     console.log(`Status: ${response.status} ${response.statusText}`)
-    //     expect(status).toEqual(200);
-    // });
+    test('Get Balance', async () => {
+        console.log("balance request", variables.balanceBody.sessionId);
+        const response = await functions.getBalance(variables.balanceBody, variables.header);
+        const {status, data, config} = response;
+        console.log('Request Data', config.data);
+        console.log('Response Data', data);
+        console.log(`Status: ${response.status} ${response.statusText}`)
+        expect(status).toEqual(200);
+    });
 });

@@ -15,7 +15,6 @@ export const functions = {
         )},
     
     getBalance: (body, header) => {
-        console.log('eer', body);
         return axios.post(
             `http://${variables.globals.rbowF5Domain}:${variables.globals.rbowPort}/onewallet/api3/get_balance`,
             {...body}, {...header}

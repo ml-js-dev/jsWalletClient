@@ -31,7 +31,7 @@ export let globals = {
     //hardcoded block
     casinoId: 'ladbrokes0000001',
     licenseePlayerId: 'abcdef',
-    playerId: 'insertPlayerId',
+    playerId: 'oweszi5b3qhaabdw',
     gameType: 'csp',
     tableId: 'CSPTable00000001',
     virtualTableId: null,
