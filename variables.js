@@ -18,13 +18,20 @@ export function setEnvironmentVariable() {
         }
         return id;
     };
-    return {
-        idGeneration: {
-            getRandomId,
-            getRandomNumericId
-        }
-    };
-}
+    var getMixedId = (idLength) => {
+        let idGeneration = {
+          randomId: this.getRandomId(idLength),
+          randomNumericId: this.getRandomNumericId(idLength)
+        };
+        return idGeneration;
+      };
+    // return {
+    //     idGeneration: {
+    //         getRandomId,
+    //         getRandomNumericId
+    //     }
+    // };
+};
 
 //Global Variables
 export let globals = {
