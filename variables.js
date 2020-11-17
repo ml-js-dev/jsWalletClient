@@ -116,9 +116,9 @@ export const balanceTableBody = {
 
 export const placeBet1Body = {
     "correlationId": globals.correlationId,
-    "gameId": "{{gameId}}",
+    "gameId": globals.gameId,
     "sessionId": globals.sessionId,
-    "txId": "{{txId1}}",
+    "txId": globals.txId1,
     "gameType": globals.gameType,
     "table": {
         "tableId": globals.tableId,
@@ -129,15 +129,15 @@ export const placeBet1Body = {
         "code": globals.betCode1,
         "amount": globals.bet
     }],
-    "placeTime": globals.placeTime,
+    "placeTime": placeTime,
     "balanceId": globals.balanceType
 };
 
 export const placeBet2Body = {
     "correlationId": globals.correlationId,
-    "gameId": "{{gameId}}",
+    "gameId": globals.txId2,
     "sessionId": globals.sessionId,
-    "txId": "{{txId1}}",
+    "txId": globals.txId2,
     "gameType": globals.gameType,
     "table": {
         "tableId": globals.tableId,
@@ -154,7 +154,7 @@ export const placeBet2Body = {
             "amount": globals.bet2
         }
     ],
-    "placeTime": globals.placeTime,
+    "placeTime": placeTime,
     "balanceId": globals.balanceType
 };
 

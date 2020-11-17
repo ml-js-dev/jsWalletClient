@@ -56,6 +56,42 @@ describe("Winning Scenario", () => {
         expect(status).toEqual(200);
         console.log('Request Data', config.data);
         console.log('Response Data', data);
-        console.log(`Initial Balance = ${data.balances[0].amount}`);
+        console.log(`Status: ${response.status} ${response.statusText}`)
+        console.log(`Bet 1 = ${variables.globals.bet} ${variables.globals.currency}`);
+    });
+
+    test('Placebet 2 Request', async () => {
+        const response = await functions.placeBetSecond(variables.placeBet2Body, variables.header);
+        const {status, data, config} = response;
+        expect(status).toEqual(200);
+        console.log('Request Data', config.data);
+        console.log('Response Data', data);
+        console.log(`Status: ${response.status} ${response.statusText}`)
+        console.log(`Bet 2 = ${variables.globals.bet1} ${variables.globals.currency}`);
+        console.log(`Bet 3 = ${variables.globals.bet2} ${variables.globals.currency}`);
+    });
+
+    test('Final Settlement Request', async () => {
+        const response = await functions.finalSettlement(variables.finalSettlementBody, variables.header);
+        const {status, data, config} = response;
+        expect(status).toEqual(202);
+        console.log('Request Data', config.data);
+        console.log('Response Data', data);
+        console.log(`Status: ${response.status} ${response.statusText}`)
+        console.log(`Payout = ${variables.globals.payoff+variables.globals.payoff1+variables.globals.payoff2} ${variables.globals.currency}`);
+    });
+
+    test('Get Balance', async () => {
+        const response = await functions.getBalance(variables.balanceBody, variables.header);
+        const {status, data, config} = response;
+        const currentBalance = data.balances[0].amount;
+        expect(currentBalance).not.toBeNull();
+        expect(status).toEqual(200);
+        expect(data.balances);
+        expect(status).not.toEqual('error');
+        console.log('Request Data', config.data);
+        console.log('Response Data', data);
+        console.log(`Status: ${response.status} ${response.statusText}`)
+        console.log(`Player balance = ${currentBalance} ${variables.sessionInitBody.currency}`);
     });
 });
